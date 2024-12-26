@@ -3,35 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="CSS/style.css">
+  <title>Reservar horario</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Formulario de Asesoría</h1>
+  <h1>Reserva tu horario</h1>
+  <form id="reservationForm">
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" name="fecha" required><br><br>
 
-        <form id="formulario-dinamico">
-          <section id="datos-personales">
-              <h2>Datos Personales</h2>
-              <label for="nombre">Nombre:</label>
-              <input type="text" id="nombre" name="nombre" placeholder="Primer Nombre" required>
+    <label for="hora">Hora:</label>
+    <select id="hora" name="hora" required>
+      <option value="14:00">14:00</option>
+      <option value="15:00">15:00</option>
+      <option value="16:00">16:00</option>
+      <option value="17:00">17:00</option>
+    </select><br><br>
 
-              <label for="apellido">Apellido:</label>
-              <input type="text" id="apellido" name="apellido" placeholder="Primer Apellido" required>
-          </section>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required><br><br>
 
-          <!-- Datos de contacto -->
-          <section id="datos-contacto">
-              <h2>Datos de Contacto</h2>
-              <label for="telefono">Número de Teléfono:</label>
-              <input type="tel" id="telefono" name="telefono" placeholder="10 dígitos" required>
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido" required><br><br>
 
-              <label for="correo">Correo Electrónico:</label>
-              <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required>
-          </section>
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" name="telefono" required><br><br>
 
-          <button type="submit" id="enviar">Enviar</button>
+    <label for="correo">Correo:</label>
+    <input type="email" id="correo" name="correo" required><br><br>
 
-          <script src="JS/nose.js"></script>
+    <button type="submit">Reservar</button>
+  </form>
+
+  <p id="responseMessage"></p>
+
+  <!-- Vincula el archivo JavaScript -->
+  <script src="JS/nose.js"></script>
 </body>
 </html>
