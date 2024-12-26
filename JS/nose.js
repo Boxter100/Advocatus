@@ -18,7 +18,7 @@ form.addEventListener('submit', async (event) => {
 
   try {
     // Envía los datos al Google App Script
-    const response = await fetch('TU_URL_DE_APP_SCRIPT', {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbznbUHV36aRB83YTfIzLYl_IyVU7InpocBC7Pp73BU8rVIUDP-_hqOdVc5hJHiDJqjb/exec', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
