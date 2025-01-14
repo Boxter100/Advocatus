@@ -1,42 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reservar horario</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Tree</title>
+    <link rel="stylesheet" href="Estilos/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Satisfy&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Reserva tu horario</h1>
-  <form id="reservationForm">
-    <label for="fecha">Fecha:</label>
-    <input type="date" id="fecha" name="fecha" required><br><br>
+    <!-- Contenedor Principal -->
+    <div class="container">
+        <div>
+            <h2>Advocatus</h2>
+        </div>
 
-    <label for="hora">Hora:</label>
-    <select id="hora" name="hora" required>
-      <option value="14:00">14:00</option>
-      <option value="15:00">15:00</option>
-      <option value="16:00">16:00</option>
-      <option value="17:00">17:00</option>
-    </select><br><br>
-
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" required><br><br>
-
-    <label for="apellido">Apellido:</label>
-    <input type="text" id="apellido" name="apellido" required><br><br>
-
-    <label for="telefono">Teléfono:</label>
-    <input type="tel" id="telefono" name="telefono" required><br><br>
-
-    <label for="correo">Correo:</label>
-    <input type="email" id="correo" name="correo" required><br><br>
-
-    <button type="submit">Reservar</button>
-  </form>
-
-  <p id="responseMessage"></p>
-
-  <!-- Vincula el archivo JavaScript -->
-  <script src="JS/nose.js"></script>
+        <!-- Contenedor de Tarjetas -->
+        <div class="card-container">
+        
+            <div class="card" id="tiktok">
+                <a href="https://www.tiktok.com/@advocatus_chavez_garcia?is_from_webapp=1&sender_device=pc" target="_blank">
+                    <img src="SVJ/tiktok.svg" alt="Tiktok logo" class="card-icon">TikTok
+                </a>
+            </div>
+            <div class="card" id="Facebook">
+                <a href="https://www.facebook.com/share/15KNL1XBQ6/?mibextid=wwXIfr" target="_blank">
+                    <img src="SVJ/facebook.svg" alt="Facebook logo" class="card-icon">Facebook
+                </a>
+            </div>
+            <div class="card" id="Instagram">
+                <a href="" target="_blank">
+                    <img src="SVJ/instagram.svg" alt="Instagram logo" class="card-icon">Instagram
+                </a>
+            </div>
+            <div class="card" id="Youtube">
+                <a href="" target="_blank">
+                    <img src="SVJ/youtube.svg" alt="Youtube logo" class="card-icon">Youtube
+                </a>
+            </div>
+            <div class="card" id="Whatsapp">
+                <a href="https://wa.me/5539343733" target="_blank">
+                    <img src="SVJ/whatsapp.svg" alt="Whatsapp logo" class="card-icon">Whatsapp
+                </a>
+            </div>
+            <div class="card" id="Form">
+                <a href="https://script.google.com/macros/s/AKfycbypmlSsd6KXdK-0yhuIj3ofy4W31yerG20btKATVk7KKaQm47rEGi2X_Bwlo2CjrFd7/exec" target="_blank">
+                    <img src="SVJ/form.svg" alt="Form logo" class="card-icon">Formulario
+                </a>
+            </div>
+        </div>
 </body>
 </html>
