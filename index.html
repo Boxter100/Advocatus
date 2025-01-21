@@ -1,54 +1,97 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Link Tree</title>
-    <link rel="stylesheet" href="Estilos/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Allura&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Satisfy&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <!-- Contenedor Principal -->
-    <div class="container">
-        <div>
-            <h2>Advocatus</h2>
-        </div>
+<body class="bg-gray-500">
+  <!-- Profile Card -->
+  <div class="profile-card bg-gray-900 p-6 shadow-lg mb-8 rounded-b-lg">
+<!-- Imagen de fondo -->
+<div class="background-img relative">
+  <img src="SVG/image.png" alt="Imagen de fondo" class="w-full h-48 object-cover rounded-lg">
+  <!-- Foto de perfil -->
+  <div class="profile-pic absolute -bottom-16 left-1/2 transform -translate-x-1/2">
+    <img src="SVG/Perfil.jpeg" alt="Foto de perfil" class="w-40 h-40 rounded-full border-4 border-white">
+  </div>
+</div>
 
-        <!-- Contenedor de Tarjetas -->
-        <div class="card-container">
-        
-            <div class="card" id="tiktok">
-                <a href="https://www.tiktok.com/@advocatus_chavez_garcia?is_from_webapp=1&sender_device=pc" target="_blank">
-                    <img src="SVJ/tiktok.svg" alt="Tiktok logo" class="card-icon">TikTok
-                </a>
-            </div>
-            <div class="card" id="Facebook">
-                <a href="https://www.facebook.com/share/15KNL1XBQ6/?mibextid=wwXIfr" target="_blank">
-                    <img src="SVJ/facebook.svg" alt="Facebook logo" class="card-icon">Facebook
-                </a>
-            </div>
-            <div class="card" id="Instagram">
-                <a href="" target="_blank">
-                    <img src="SVJ/instagram.svg" alt="Instagram logo" class="card-icon">Instagram
-                </a>
-            </div>
-            <div class="card" id="Youtube">
-                <a href="" target="_blank">
-                    <img src="SVJ/youtube.svg" alt="Youtube logo" class="card-icon">Youtube
-                </a>
-            </div>
-            <div class="card" id="Whatsapp">
-                <a href="https://wa.me/5539343733" target="_blank">
-                    <img src="SVJ/whatsapp.svg" alt="Whatsapp logo" class="card-icon">Whatsapp
-                </a>
-            </div>
-            <div class="card" id="Form">
-                <a href="https://script.google.com/macros/s/AKfycbypmlSsd6KXdK-0yhuIj3ofy4W31yerG20btKATVk7KKaQm47rEGi2X_Bwlo2CjrFd7/exec" target="_blank">
-                    <img src="SVJ/form.svg" alt="Form logo" class="card-icon">Formulario
-                </a>
-            </div>
-        </div>
+    
+    <!-- Texto: Nombre y descripción -->
+    <div class="text-center mt-20 bg-gray-600 rounded-lg p-2">
+      <h2 class="text-xl font-bold text-white">Chávez Gracía</h2>
+      <p class="text-black-800">Advocatus</p>
+    </div>
+  
+    <!-- Iconos envueltos en círculos -->
+    <div class="icons flex justify-center gap-4 mt-6">
+      <a href="https://wa.me/5573030027" target="_blank" class="icon bg-gray-400 p-3 rounded-full hover:bg-gray-600 transition-colors">
+        <img src="SVG/whatsapp.svg" alt="WhatsApp" class="w-6 h-6">
+      </a>
+      <a href="tel:+525573030027" class="icon bg-gray-400 p-3 rounded-full hover:bg-gray-600 transition-colors">
+        <img src="SVG/smartphone.svg" alt="Teléfono" class="w-6 h-6">
+      </a>
+      <a href="mailto:correo@ejemplo.com" class="icon bg-gray-400 p-3 rounded-full hover:bg-gray-600 transition-colors">
+        <img src="SVG/mail.svg" alt="Correo Electrónico" class="w-6 h-6">
+      </a>
+    </div>
+  </div>
+
+  <!-- Sobre mí -->
+  <div class="bg-white p-6 shadow-lg rounded-lg m-8">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Sobre mí</h2>
+    <p class="text-gray-700">
+      Egresado de la máxima casa de estudios, con más de 25 años de experiencia en la práctica legal, asesorando a clientes en una amplia gama de asuntos legales. Mi carrera se ha caracterizado por un compromiso inquebrantable con la justicia, la ética profesional y la resolución efectiva de conflictos.
+    </p>
+  </div>
+
+<!-- Servicios -->
+<div class="bg-white p-6 shadow-lg rounded-lg m-8">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4">Servicios</h2>
+  <div class="space-y-4">
+    
+    <!-- Asesoría legal -->
+    <div>
+      <div class="flex items-center justify-between cursor-pointer" id="asesoriaLegalToggle">
+        <h3 class="text-xl font-medium text-gray-700">Asesoría legal</h3>
+        <svg id="asesoriaLegalArrow" class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </div>
+      <p class="text-gray-600 mt-2 transition-max-height max-h-0 overflow-hidden" id="asesoriaLegalContent">Asesoramiento en materia civil, mercantil, laboral, fiscal y administrativa.</p>
+    </div>
+
+    <!-- Representación legal -->
+    <div>
+      <div class="flex items-center justify-between cursor-pointer" id="representacionLegalToggle">
+        <h3 class="text-xl font-medium text-gray-700">Representación legal</h3>
+        <svg id="representacionLegalArrow" class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </div>
+      <p class="text-gray-600 mt-2 transition-max-height max-h-0 overflow-hidden" id="representacionLegalContent">Representación en juicios civiles, mercantiles, laborales, fiscales y administrativos.</p>
+    </div>
+    
+  </div>
+</div>
+
+  <div class="flex justify-center gap-4 m-6">
+    <a href="https://www.facebook.com" target="_blank" class="icon bg-gray-400 p-3 rounded-full hover:bg-gray-600 transition-colors">
+      <img src="SVG/facebook.svg" alt="Facebook" class="w-8 h-8">
+    </a>
+    <a href="https://www.youtube.com" target="_blank" class="icon bg-gray-400 p-3 rounded-full hover:bg-gray-600 transition-colors">
+      <img src="SVG/youtube.svg" alt="YouTube" class="w-8 h-8">
+    </a>
+    <a href="https://www.tiktok.com" target="_blank" class="icon bg-gray-400 p-3 rounded-full hover:bg-gray-600 transition-colors">
+      <img src="SVG/tiktok.svg" alt="TikTok" class="w-8 h-8">
+    </a>
+    <a href="https://www.instagram.com" target="_blank" class="icon bg-gray-400 p-3 rounded-full hover:bg-gray-600 transition-colors">
+      <img src="SVG/instagram.svg" alt="Instagram" class="w-8 h-8">
+    </a>
+  </div>
+  <!-- Enlace al archivo JavaScript -->
+<script src="JS/flechas.js"></script>
 </body>
 </html>
