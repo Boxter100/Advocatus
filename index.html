@@ -42,10 +42,83 @@
   <!-- Sobre mí -->
   <div class="bg-white p-6 shadow-lg rounded-lg m-8">
     <h2 class="text-2xl font-semibold text-gray-800 mb-4">Sobre mí</h2>
-    <p class="text-gray-700">
+    <p class="text-gray-700 text-sm">
       Egresado de la máxima casa de estudios, con más de 25 años de experiencia en la práctica legal, asesorando a clientes en una amplia gama de asuntos legales. Mi carrera se ha caracterizado por un compromiso inquebrantable con la justicia, la ética profesional y la resolución efectiva de conflictos.
     </p>
   </div>
+
+  <div class="p-6 shadow-lg rounded-lg m-8 bg-gray-100">
+    <!-- Título principal -->
+    <div class="flex items-center justify-between cursor-pointer" id="areasToggle">
+      <h2 class="text-2xl font-semibold text-gray-800">Áreas</h2>
+      <svg id="areasArrow" class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </div>
+  
+<!-- Contenido desplegable -->
+<div class="mt-4 transition-max-height max-h-0 overflow-hidden" id="areasContent">
+  <div class="space-y-4">
+    <!-- Áreas y sus barras -->
+    <div>
+      <h3 class="text-lg font-medium text-gray-700">Laboral</h3>
+      <div class="relative w-full bg-gray-200 h-4 rounded">
+        <div class="progress-bar absolute top-0 left-0 bg-blue-500 h-4 rounded"></div>
+      </div>
+    </div>
+  
+        <div>
+          <h3 class="text-lg font-medium text-gray-700">Penal</h3>
+          <div class="relative w-full bg-gray-200 h-4 rounded">
+            <div class="progress-bar absolute top-0 left-0 bg-red-500 h-4 rounded"></div>
+          </div>
+        </div>
+  
+        <div>
+          <h3 class="text-lg font-medium text-gray-700">Familiar</h3>
+          <div class="relative w-full bg-gray-200 h-4 rounded">
+            <div class="progress-bar absolute top-0 left-0 bg-green-500 h-4 rounded"></div>
+          </div>
+        </div>
+  
+        <div>
+          <h3 class="text-lg font-medium text-gray-700">Administrativo</h3>
+          <div class="relative w-full bg-gray-200 h-4 rounded">
+            <div class="progress-bar absolute top-0 left-0 bg-yellow-500 h-4 rounded"></div>
+          </div>
+        </div>
+  
+        <div>
+          <h3 class="text-lg font-medium text-gray-700">Civil</h3>
+          <div class="relative w-full bg-gray-200 h-4 rounded">
+            <div class="progress-bar absolute top-0 left-0 bg-indigo-500 h-4 rounded"></div>
+          </div>
+        </div>
+  
+        <div>
+          <h3 class="text-lg font-medium text-gray-700">Mercantil</h3>
+          <div class="relative w-full bg-gray-200 h-4 rounded">
+            <div class="progress-bar absolute top-0 left-0 bg-pink-500 h-4 rounded"></div>
+          </div>
+        </div>
+  
+        <div>
+          <h3 class="text-lg font-medium text-gray-700">Constitucional</h3>
+          <div class="relative w-full bg-gray-200 h-4 rounded">
+            <div class="progress-bar absolute top-0 left-0 bg-purple-500 h-4 rounded"></div>
+          </div>
+        </div>
+  
+        <div>
+          <h3 class="text-lg font-medium text-gray-700">Fiscal</h3>
+          <div class="relative w-full bg-gray-200 h-4 rounded">
+            <div class="progress-bar absolute top-0 left-0 bg-teal-500 h-4 rounded"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
 <!-- Servicios -->
 <div class="bg-white p-6 shadow-lg rounded-lg m-8">
@@ -60,7 +133,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
         </svg>
       </div>
-      <p class="text-gray-600 mt-2 transition-max-height max-h-0 overflow-hidden" id="asesoriaLegalContent">Asesoramiento en materia civil, mercantil, laboral, fiscal y administrativa.</p>
+      <p class="text-gray-600 mt-2 text-sm transition-max-height max-h-0 overflow-hidden" id="asesoriaLegalContent">Consulta Dinámica con duración de 1 hora presencial o remota a través de videollamada en la cual se recibe una Asesoría Técnica al problema planteado obteniendo una opinión sobre su situación la cual tiene un costo de $1,000.00</p>
     </div>
 
     <!-- Representación legal -->
@@ -71,23 +144,23 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
         </svg>
       </div>
-      <p class="text-gray-600 mt-2 transition-max-height max-h-0 overflow-hidden" id="representacionLegalContent">Representación en juicios civiles, mercantiles, laborales, fiscales y administrativos.</p>
+      <p class="text-gray-600 mt-2 text-sm transition-max-height max-h-0 overflow-hidden" id="representacionLegalContent">Litigios mediante los cuales se pretende obtener atraves de una Controversia en un Tribunal, las pretensiones planteadas en la Demanda o Contestación de Demanda y/o Reconvención y se materialicen en una Sentencia y en caso de inconformidad interponer los Medios de Defensa que otorga la Ley</p>
     </div>
     
   </div>
 </div>
 
   <div class="flex justify-center gap-4 m-6">
-    <a href="https://www.facebook.com" target="_blank" class="icon bg-gray-400 p-3 rounded-full hover:bg-gray-600 transition-colors">
+    <a href="https://www.facebook.com" target="_blank" class="icon p-3 rounded-full hover:bg-gray-600 transition-colors" style="background-color: #1877F2;">
       <img src="SVG/facebook.svg" alt="Facebook" class="w-8 h-8">
     </a>
-    <a href="https://www.youtube.com" target="_blank" class="icon bg-gray-400 p-3 rounded-full hover:bg-gray-600 transition-colors">
+    <a href="https://www.youtube.com" target="_blank" class="icon bg-white p-3 rounded-full hover:bg-gray-600 transition-colors">
       <img src="SVG/youtube.svg" alt="YouTube" class="w-8 h-8">
     </a>
-    <a href="https://www.tiktok.com" target="_blank" class="icon bg-gray-400 p-3 rounded-full hover:bg-gray-600 transition-colors">
+    <a href="https://www.tiktok.com" target="_blank" class="icon bg-black p-3 rounded-full hover:bg-gray-600 transition-colors">
       <img src="SVG/tiktok.svg" alt="TikTok" class="w-8 h-8">
     </a>
-    <a href="https://www.instagram.com" target="_blank" class="icon bg-gray-400 p-3 rounded-full hover:bg-gray-600 transition-colors">
+    <a href="https://www.instagram.com" target="_blank" class="icon p-3 rounded-full hover:bg-gray-600 transition-colors" style="background: linear-gradient(90deg, #833AB4, #FD1D1D, #FCB045);">
       <img src="SVG/instagram.svg" alt="Instagram" class="w-8 h-8">
     </a>
   </div>
