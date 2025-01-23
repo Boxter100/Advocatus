@@ -1,3 +1,6 @@
+// Lista para rastrear las áreas abiertas
+let openAreas = [];
+
 // Toggle para Asesoría legal
 document.getElementById('asesoriaLegalToggle').addEventListener('click', () => {
   const content = document.getElementById('asesoriaLegalContent');
@@ -5,8 +8,8 @@ document.getElementById('asesoriaLegalToggle').addEventListener('click', () => {
   
   // Alternar visibilidad y dirección de la flecha
   content.classList.toggle('max-h-0');
-  content.classList.toggle('max-h-screen'); // Cambia según el tamaño que quieras que tenga el bloque cuando esté visible
-  arrow.classList.toggle('rotate-180'); // Rota la flecha
+  content.classList.toggle('max-h-screen');
+  arrow.classList.toggle('rotate-180');
   
   // Cambiar transición suave
   content.style.transition = 'max-height 0.4s ease';
@@ -19,53 +22,74 @@ document.getElementById('representacionLegalToggle').addEventListener('click', (
   
   // Alternar visibilidad y dirección de la flecha
   content.classList.toggle('max-h-0');
-  content.classList.toggle('max-h-screen'); // Cambia según el tamaño que quieras que tenga el bloque cuando esté visible
-  arrow.classList.toggle('rotate-180'); // Rota la flecha
+  content.classList.toggle('max-h-screen');
+  arrow.classList.toggle('rotate-180');
   
   // Cambiar transición suave
   content.style.transition = 'max-height 0.4s ease';
 });
 
-
-
 // Toggle para Áreas
 document.getElementById('areasToggle').addEventListener('click', () => {
   const content = document.getElementById('areasContent');
   const arrow = document.getElementById('areasArrow');
+  
+  // Cambiar transición suave
+  content.style.transition = 'max-height 0.4s ease';
 
   // Alternar visibilidad y dirección de la flecha
   content.classList.toggle('max-h-0');
-  content.classList.toggle('max-h-screen'); // Ajusta la altura máxima que desees
-  arrow.classList.toggle('rotate-180'); // Gira la flecha
-
-  // Aplicar transición suave
-  content.style.transition = 'max-height 0.4s ease-in-out'; // Cambiar según la duración y suavidad deseada
-
-  // Iniciar la animación de las barras de progreso
-  if (!content.classList.contains('max-h-0')) {
-    startProgressAnimation();
-  }
+  content.classList.toggle('max-h-screen');
+  arrow.classList.toggle('rotate-180');
 });
 
-// Función para iniciar la animación de las barras de progreso
-const startProgressAnimation = () => {
-  // Definir los valores de los anchos de las barras (en porcentaje)
-  const targetWidths = [70, 70, 80, 90, 100, 100, 100, 70]; // Cambiar según los valores de tus barras
+// Función para manejar los sub-toggles con límite de 4 áreas abiertas
+function toggleSubContentWithLimit(toggleId, contentId, arrowId) {
+  document.getElementById(toggleId).addEventListener('click', () => {
+    const content = document.getElementById(contentId);
+    const arrow = document.getElementById(arrowId);
 
-  // Seleccionar solo las barras de progreso que tienen la clase 'progress-bar'
-  const progressBars = document.querySelectorAll('.progress-bar');
-  progressBars.forEach((progressBar, index) => {
-    // Restablecer el ancho de la barra antes de la animación
-    progressBar.style.width = '0%';
+    // Cambiar transición suave
+    content.style.transition = 'max-height 0.4s ease';
 
-    // Iniciar la animación de llenado
-    setTimeout(() => {
-      progressBar.style.transition = 'width 2s ease'; // Establecer la duración de la animación
-      progressBar.style.width = `${targetWidths[index]}%`; // Ajustar el ancho según el valor
-    }, 100); // Tiempo de espera antes de comenzar la animación
+    if (content.classList.contains('max-h-0')) {
+      // Si el área se abre
+      content.classList.remove('max-h-0');
+      content.classList.add('max-h-screen');
+      arrow.classList.add('rotate-180');
+
+      // Añadir esta área a la lista de abiertas
+      openAreas.push({ toggleId, contentId, arrowId });
+
+      // Si hay más de 4 áreas abiertas, cerrar la más antigua
+      if (openAreas.length > 2) {
+        const oldestArea = openAreas.shift(); // Remover la primera abierta
+        const oldestContent = document.getElementById(oldestArea.contentId);
+        const oldestArrow = document.getElementById(oldestArea.arrowId);
+
+        oldestContent.classList.add('max-h-0');
+        oldestContent.classList.remove('max-h-screen');
+        oldestArrow.classList.remove('rotate-180');
+      }
+    } else {
+      // Si el área se cierra
+      content.classList.add('max-h-0');
+      content.classList.remove('max-h-screen');
+      arrow.classList.remove('rotate-180');
+
+      // Remover esta área de la lista de abiertas
+      openAreas = openAreas.filter(area => area.contentId !== contentId);
+    }
   });
-};
+}
 
-
-
+// Inicializar los toggles con límite para las áreas
+toggleSubContentWithLimit('laboralToggle', 'laboralContent', 'laboralArrow');
+toggleSubContentWithLimit('familiarToggle', 'familiarContent', 'familiarArrow');
+toggleSubContentWithLimit('penalToggle', 'penalContent', 'penalArrow');
+toggleSubContentWithLimit('admiToggle', 'admiContent', 'admiArrow');
+toggleSubContentWithLimit('civilToggle', 'civilContent', 'civilArrow');
+toggleSubContentWithLimit('mercaToggle', 'mercaContent', 'mercaArrow');
+toggleSubContentWithLimit('constToggle', 'constContent', 'constArrow');
+toggleSubContentWithLimit('fiscalToggle', 'fiscalContent', 'fiscalArrow');
 
