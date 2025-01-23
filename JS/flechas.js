@@ -62,7 +62,7 @@ function toggleSubContentWithLimit(toggleId, contentId, arrowId) {
       openAreas.push({ toggleId, contentId, arrowId });
 
       // Si hay más de 4 áreas abiertas, cerrar la más antigua
-      if (openAreas.length > 2) {
+      if (openAreas.length > 1) {
         const oldestArea = openAreas.shift(); // Remover la primera abierta
         const oldestContent = document.getElementById(oldestArea.contentId);
         const oldestArrow = document.getElementById(oldestArea.arrowId);
